@@ -8,7 +8,7 @@
 <link rel=preload as=style href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap">
 <link rel=stylesheet href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto+Mono&family=Roboto:wght@400;700&display=swap" media=print onload="this.media='all'">
 <meta name=author content="Ming Ding">
-<meta name=description content="We present efficient algorithms for solving systems of linear equations in weighted 1-Laplacians of well-shaped simplicial complexes. 1-Laplacians or higher-dimensional Laplacians generalize graph Laplacians to higher-dimensional simplicial complexes and are crucial in computational topology and topological data analysis. Previously, nearly-linear time solvers were designed for unweighted simplicial complexes that triangulate a three-ball in R^3 (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA’2013]) and their sub-complexes (Black, Maxwell, Nayyeri, and Winkelman [SODA’2022], Black and Nayyeri [ICALP’2022]). Additionally, quadratic time solvers by Nested Dissection exist for more general systems whose nonzero structures encode well-shaped simplicial complexes embedded in R^3. <br><br> We generalize the specialized solvers for 1-Laplacians to weighted simplicial complexes with additional geometric structures and improve the runtime of Nested Dissection. Specifically, we consider simplicial complexes embedded in R^3 such that (1) the complex triangulates a convex ball in R^3, (2) the underlying topological space of the complex is convex and has a bounded aspect ratio, and (3) each tetrahedron has a bounded aspect ratio and volume. We say such a simplicial complex is stable. We can approximately solve weighted 1-Laplacian systems in a stable simplicial complex with n simplexes up to high precision in time O˜(n^{3/2}) if the ratio between the maximum and minimum simplex weights is O˜(n^{1/6}). In addition, we generalize this solver to a union of stable simplicial complex chunks. As a result, our solver has a comparable runtime, parameterized by the number of chunks and the number of simplexes shared by more than one chunk. Our solvers are inspired by the Incomplete Nested Dissection designed by Kyng, Peng, Schwieterman, and Zhang [STOC’2018] for stiffness matrices of well-shaped trusses.">
+<meta name=description content="We present efficient algorithms for solving systems of linear equations in $1$-Laplacians of well-shaped simplicial complexes. $1$-Laplacians, or higher-dimensional Laplacians, generalize graph Laplacians to higher-dimensional simplicial complexes and play a key role in computational topology and topological data analysis. Previously, nearly-linear time solvers were developed for simplicial complexes with known collapsing sequences and bounded Betti numbers, such as those triangulating a three-ball in $\mathbb{R}^3$ (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA'2014], Black, Maxwell, Nayyeri, and Winkelman [SODA'2022], Black and Nayyeri [ICALP'2022]). Furthermore, Nested Dissection provides quadratic time solvers for more general systems with nonzero structures representing well-shaped simplicial complexes embedded in $\mathbb{R}^3$. <br><br> We generalize the specialized solvers for $1$-Laplacians to simplicial complexes with additional geometric structures but \emph{without collapsing sequences and bounded Betti numbers}, and we improve the runtime of Nested Dissection. We focus on simplicial complexes that meet two conditions:(1) each individual simplex has a bounded aspect ratio, and (2) they can be divided into &#34;disjoint&#34; and balanced regions with well-shaped interiors and boundaries. Our solvers draw inspiration from the Incomplete Nested Dissection for stiffness matrices of well-shaped trusses (Kyng, Peng, Schwieterman, and Zhang [STOC'2018]).">
 <link rel=alternate hreflang=en-us href=/publication/dz23/>
 <meta name=theme-color content="#1565c0">
 <link rel=stylesheet href=/css/vendor-bundle.min.f1ecf783c14edc00c9320c205831ad8e.css media=print onload="this.media='all'">
@@ -23,13 +23,13 @@
 <meta property="twitter:card" content="summary">
 <meta property="og:site_name" content="Ming Ding">
 <meta property="og:url" content="/publication/dz23/">
-<meta property="og:title" content="Weighted 1-Laplacian Solvers for Well-Shaped Simplicial Complexes | Ming Ding">
-<meta property="og:description" content="We present efficient algorithms for solving systems of linear equations in weighted 1-Laplacians of well-shaped simplicial complexes. 1-Laplacians or higher-dimensional Laplacians generalize graph Laplacians to higher-dimensional simplicial complexes and are crucial in computational topology and topological data analysis. Previously, nearly-linear time solvers were designed for unweighted simplicial complexes that triangulate a three-ball in R^3 (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA’2013]) and their sub-complexes (Black, Maxwell, Nayyeri, and Winkelman [SODA’2022], Black and Nayyeri [ICALP’2022]). Additionally, quadratic time solvers by Nested Dissection exist for more general systems whose nonzero structures encode well-shaped simplicial complexes embedded in R^3. <br><br> We generalize the specialized solvers for 1-Laplacians to weighted simplicial complexes with additional geometric structures and improve the runtime of Nested Dissection. Specifically, we consider simplicial complexes embedded in R^3 such that (1) the complex triangulates a convex ball in R^3, (2) the underlying topological space of the complex is convex and has a bounded aspect ratio, and (3) each tetrahedron has a bounded aspect ratio and volume. We say such a simplicial complex is stable. We can approximately solve weighted 1-Laplacian systems in a stable simplicial complex with n simplexes up to high precision in time O˜(n^{3/2}) if the ratio between the maximum and minimum simplex weights is O˜(n^{1/6}). In addition, we generalize this solver to a union of stable simplicial complex chunks. As a result, our solver has a comparable runtime, parameterized by the number of chunks and the number of simplexes shared by more than one chunk. Our solvers are inspired by the Incomplete Nested Dissection designed by Kyng, Peng, Schwieterman, and Zhang [STOC’2018] for stiffness matrices of well-shaped trusses."><meta property="og:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png">
+<meta property="og:title" content="Efficient 1-Laplacian Solvers for Well-Shaped Simplicial Complexes: Beyond Betti Numbers and Collapsing Sequences | Ming Ding">
+<meta property="og:description" content="We present efficient algorithms for solving systems of linear equations in $1$-Laplacians of well-shaped simplicial complexes. $1$-Laplacians, or higher-dimensional Laplacians, generalize graph Laplacians to higher-dimensional simplicial complexes and play a key role in computational topology and topological data analysis. Previously, nearly-linear time solvers were developed for simplicial complexes with known collapsing sequences and bounded Betti numbers, such as those triangulating a three-ball in $\mathbb{R}^3$ (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA'2014], Black, Maxwell, Nayyeri, and Winkelman [SODA'2022], Black and Nayyeri [ICALP'2022]). Furthermore, Nested Dissection provides quadratic time solvers for more general systems with nonzero structures representing well-shaped simplicial complexes embedded in $\mathbb{R}^3$. <br><br> We generalize the specialized solvers for $1$-Laplacians to simplicial complexes with additional geometric structures but \emph{without collapsing sequences and bounded Betti numbers}, and we improve the runtime of Nested Dissection. We focus on simplicial complexes that meet two conditions:(1) each individual simplex has a bounded aspect ratio, and (2) they can be divided into &#34;disjoint&#34; and balanced regions with well-shaped interiors and boundaries. Our solvers draw inspiration from the Incomplete Nested Dissection for stiffness matrices of well-shaped trusses (Kyng, Peng, Schwieterman, and Zhang [STOC'2018])."><meta property="og:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png">
 <meta property="twitter:image" content="/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png"><meta property="og:locale" content="en-us">
-<meta property="article:published_time" content="2023-02-14T00:00:00+00:00">
-<meta property="article:modified_time" content="2023-02-14T00:00:00+00:00">
-<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/publication/dz23/"},"headline":"Weighted 1-Laplacian Solvers for Well-Shaped Simplicial Complexes","datePublished":"2023-02-14T00:00:00Z","dateModified":"2023-02-14T00:00:00Z","author":{"@type":"Person","name":"Ming Ding"},"publisher":{"@type":"Organization","name":"Ming Ding","logo":{"@type":"ImageObject","url":"/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"}},"description":"We present efficient algorithms for solving systems of linear equations in weighted 1-Laplacians of well-shaped simplicial complexes. 1-Laplacians or higher-dimensional Laplacians generalize graph Laplacians to higher-dimensional simplicial complexes and are crucial in computational topology and topological data analysis. Previously, nearly-linear time solvers were designed for unweighted simplicial complexes that triangulate a three-ball in R^3 (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA’2013]) and their sub-complexes (Black, Maxwell, Nayyeri, and Winkelman [SODA’2022], Black and Nayyeri [ICALP’2022]). Additionally, quadratic time solvers by Nested Dissection exist for more general systems whose nonzero structures encode well-shaped simplicial complexes embedded in R^3. \u003cbr\u003e\u003cbr\u003e We generalize the specialized solvers for 1-Laplacians to weighted simplicial complexes with additional geometric structures and improve the runtime of Nested Dissection. Specifically, we consider simplicial complexes embedded in R^3 such that (1) the complex triangulates a convex ball in R^3, (2) the underlying topological space of the complex is convex and has a bounded aspect ratio, and (3) each tetrahedron has a bounded aspect ratio and volume. We say such a simplicial complex is stable. We can approximately solve weighted 1-Laplacian systems in a stable simplicial complex with n simplexes up to high precision in time O˜(n^{3/2}) if the ratio between the maximum and minimum simplex weights is O˜(n^{1/6}). In addition, we generalize this solver to a union of stable simplicial complex chunks. As a result, our solver has a comparable runtime, parameterized by the number of chunks and the number of simplexes shared by more than one chunk. Our solvers are inspired by the Incomplete Nested Dissection designed by Kyng, Peng, Schwieterman, and Zhang [STOC’2018] for stiffness matrices of well-shaped trusses."}</script>
-<title>Weighted 1-Laplacian Solvers for Well-Shaped Simplicial Complexes | Ming Ding</title>
+<meta property="article:published_time" content="2023-06-23T00:00:00+00:00">
+<meta property="article:modified_time" content="2023-06-23T00:00:00+00:00">
+<script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","mainEntityOfPage":{"@type":"WebPage","@id":"/publication/dz23/"},"headline":"Efficient 1-Laplacian Solvers for Well-Shaped Simplicial Complexes: Beyond Betti Numbers and Collapsing Sequences","datePublished":"2023-06-23T00:00:00Z","dateModified":"2023-06-23T00:00:00Z","author":{"@type":"Person","name":"Ming Ding"},"publisher":{"@type":"Organization","name":"Ming Ding","logo":{"@type":"ImageObject","url":"/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_192x192_fill_lanczos_center_3.png"}},"description":"We present efficient algorithms for solving systems of linear equations in $1$-Laplacians of well-shaped simplicial complexes. $1$-Laplacians, or higher-dimensional Laplacians, generalize graph Laplacians to higher-dimensional simplicial complexes and play a key role in computational topology and topological data analysis. Previously, nearly-linear time solvers were developed for simplicial complexes with known collapsing sequences and bounded Betti numbers, such as those triangulating a three-ball in $\\mathbb{R}^3$ (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA'2014], Black, Maxwell, Nayyeri, and Winkelman [SODA'2022], Black and Nayyeri [ICALP'2022]). Furthermore, Nested Dissection provides quadratic time solvers for more general systems with nonzero structures representing well-shaped simplicial complexes embedded in $\\mathbb{R}^3$. \u003cbr\u003e\u003cbr\u003e We generalize the specialized solvers for $1$-Laplacians to simplicial complexes with additional geometric structures but \\emph{without collapsing sequences and bounded Betti numbers}, and we improve the runtime of Nested Dissection. We focus on simplicial complexes that meet two conditions:(1) each individual simplex has a bounded aspect ratio, and (2) they can be divided into \"disjoint\" and balanced regions with well-shaped interiors and boundaries. Our solvers draw inspiration from the Incomplete Nested Dissection for stiffness matrices of well-shaped trusses (Kyng, Peng, Schwieterman, and Zhang [STOC'2018])."}</script>
+<title>Efficient 1-Laplacian Solvers for Well-Shaped Simplicial Complexes: Beyond Betti Numbers and Collapsing Sequences | Ming Ding</title>
 </head>
 <body id=top data-spy=scroll data-offset=70 data-target=#TableOfContents class=page-wrapper data-wc-page-id=3797f534417829fe1accc856888a387f>
 <script src=/js/wowchemy-init.min.8f76bdc9e086322ed5147724ebba3d06.js></script>
@@ -111,7 +111,7 @@
 <div class=page-body>
 <div class=pub>
 <div class="article-container pt-3">
-<h1>Weighted 1-Laplacian Solvers for Well-Shaped Simplicial Complexes</h1>
+<h1>Efficient 1-Laplacian Solvers for Well-Shaped Simplicial Complexes: Beyond Betti Numbers and Collapsing Sequences</h1>
 <div class=article-metadata>
 <div>
 <span class=author-highlighted>
@@ -119,50 +119,75 @@ Ming Ding</span>, <span>
 Peng Zhang</span>
 </div>
 <span class=article-date>
-February 2023
+June 2023
 </span>
 </div>
 <div class="btn-links mb-3">
-<a class="btn btn-outline-primary btn-page-header" href=/publication/dz23/DZ23.pdf target=_blank rel=noopener>
-PDF
-</a>
+<a class="btn btn-outline-primary btn-page-header" href=https://arxiv.org/abs/2302.06499 target=_blank rel=noopener>
+arXiv</a>
 </div>
 </div>
 <div class=article-container>
 <h3>Abstract</h3>
-<p class=pub-abstract>We present efficient algorithms for solving systems of linear equations in weighted 1-Laplacians of well-shaped simplicial complexes. 1-Laplacians or higher-dimensional Laplacians generalize graph Laplacians to higher-dimensional simplicial complexes and are crucial in computational topology and topological data analysis. Previously, nearly-linear time solvers were designed for unweighted simplicial complexes that triangulate a three-ball in R^3 (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA’2013]) and their sub-complexes (Black, Maxwell, Nayyeri, and Winkelman [SODA’2022], Black and Nayyeri [ICALP’2022]). Additionally, quadratic time solvers by Nested Dissection exist for more general systems whose nonzero structures encode well-shaped simplicial complexes embedded in R^3. <br><br> We generalize the specialized solvers for 1-Laplacians to weighted simplicial complexes with additional geometric structures and improve the runtime of Nested Dissection. Specifically, we consider simplicial complexes embedded in R^3 such that (1) the complex triangulates a convex ball in R^3, (2) the underlying topological space of the complex is convex and has a bounded aspect ratio, and (3) each tetrahedron has a bounded aspect ratio and volume. We say such a simplicial complex is stable. We can approximately solve weighted 1-Laplacian systems in a stable simplicial complex with n simplexes up to high precision in time O˜(n^{3/2}) if the ratio between the maximum and minimum simplex weights is O˜(n^{1/6}). In addition, we generalize this solver to a union of stable simplicial complex chunks. As a result, our solver has a comparable runtime, parameterized by the number of chunks and the number of simplexes shared by more than one chunk. Our solvers are inspired by the Incomplete Nested Dissection designed by Kyng, Peng, Schwieterman, and Zhang [STOC’2018] for stiffness matrices of well-shaped trusses.</p>
+<p class=pub-abstract>We present efficient algorithms for solving systems of linear equations in $1$-Laplacians of well-shaped simplicial complexes. $1$-Laplacians, or higher-dimensional Laplacians, generalize graph Laplacians to higher-dimensional simplicial complexes and play a key role in computational topology and topological data analysis. Previously, nearly-linear time solvers were developed for simplicial complexes with known collapsing sequences and bounded Betti numbers, such as those triangulating a three-ball in $\mathbb{R}^3$ (Cohen, Fasy, Miller, Nayyeri, Peng, and Walkington [SODA'2014], Black, Maxwell, Nayyeri, and Winkelman [SODA'2022], Black and Nayyeri [ICALP'2022]). Furthermore, Nested Dissection provides quadratic time solvers for more general systems with nonzero structures representing well-shaped simplicial complexes embedded in $\mathbb{R}^3$. <br><br> We generalize the specialized solvers for $1$-Laplacians to simplicial complexes with additional geometric structures but \emph{without collapsing sequences and bounded Betti numbers}, and we improve the runtime of Nested Dissection. We focus on simplicial complexes that meet two conditions:(1) each individual simplex has a bounded aspect ratio, and (2) they can be divided into &ldquo;disjoint&rdquo; and balanced regions with well-shaped interiors and boundaries. Our solvers draw inspiration from the Incomplete Nested Dissection for stiffness matrices of well-shaped trusses (Kyng, Peng, Schwieterman, and Zhang [STOC'2018]).</p>
+<div class=row>
+<div class=col-md-1></div>
+<div class=col-md-10>
+<div class=row>
+<div class="col-12 col-md-3 pub-row-heading">Type</div>
+<div class="col-12 col-md-9">
+<a href=/publication/#1>
+Conference paper
+</a>
+</div>
+</div>
+</div>
+<div class=col-md-1></div>
+</div>
+<div class="d-md-none space-below"></div>
+<div class=row>
+<div class=col-md-1></div>
+<div class=col-md-10>
+<div class=row>
+<div class="col-12 col-md-3 pub-row-heading">Publication</div>
+<div class="col-12 col-md-9">In <em>European Symposium on Algorithms</em></div>
+</div>
+</div>
+<div class=col-md-1></div>
+</div>
+<div class="d-md-none space-below"></div>
 <div class=space-below></div>
 <div class=article-style>
 </div>
 <div class=share-box>
 <ul class=share>
 <li>
-<a href="https://twitter.com/intent/tweet?url=/publication/dz23/&text=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes" target=_blank rel=noopener class=share-btn-twitter aria-label=twitter>
+<a href="https://twitter.com/intent/tweet?url=/publication/dz23/&text=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences" target=_blank rel=noopener class=share-btn-twitter aria-label=twitter>
 <i class="fab fa-twitter"></i>
 </a>
 </li>
 <li>
-<a href="https://www.facebook.com/sharer.php?u=/publication/dz23/&t=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes" target=_blank rel=noopener class=share-btn-facebook aria-label=facebook>
+<a href="https://www.facebook.com/sharer.php?u=/publication/dz23/&t=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences" target=_blank rel=noopener class=share-btn-facebook aria-label=facebook>
 <i class="fab fa-facebook"></i>
 </a>
 </li>
 <li>
-<a href="mailto:?subject=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes&body=/publication/dz23/" target=_blank rel=noopener class=share-btn-email aria-label=envelope>
+<a href="mailto:?subject=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences&body=/publication/dz23/" target=_blank rel=noopener class=share-btn-email aria-label=envelope>
 <i class="fas fa-envelope"></i>
 </a>
 </li>
 <li>
-<a href="https://www.linkedin.com/shareArticle?url=/publication/dz23/&title=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes" target=_blank rel=noopener class=share-btn-linkedin aria-label=linkedin-in>
+<a href="https://www.linkedin.com/shareArticle?url=/publication/dz23/&title=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences" target=_blank rel=noopener class=share-btn-linkedin aria-label=linkedin-in>
 <i class="fab fa-linkedin-in"></i>
 </a>
 </li>
 <li>
-<a href="whatsapp://send?text=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes%20/publication/dz23/" target=_blank rel=noopener class=share-btn-whatsapp aria-label=whatsapp>
+<a href="whatsapp://send?text=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences%20/publication/dz23/" target=_blank rel=noopener class=share-btn-whatsapp aria-label=whatsapp>
 <i class="fab fa-whatsapp"></i>
 </a>
 </li>
 <li>
-<a href="https://service.weibo.com/share/share.php?url=/publication/dz23/&title=Weighted%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes" target=_blank rel=noopener class=share-btn-weibo aria-label=weibo>
+<a href="https://service.weibo.com/share/share.php?url=/publication/dz23/&title=Efficient%201-Laplacian%20Solvers%20for%20Well-Shaped%20Simplicial%20Complexes:%20Beyond%20Betti%20Numbers%20and%20Collapsing%20Sequences" target=_blank rel=noopener class=share-btn-weibo aria-label=weibo>
 <i class="fab fa-weibo"></i>
 </a>
 </li>
